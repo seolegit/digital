@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Technology Solutions | DigitalRL - USA Tech Services</title>
+    <meta name="description" content="DigitalRL offers cutting-edge digital technology solutions across the USA. Expert IT services, web development, cloud computing, and digital transformation.">
+    <meta name="keywords" content="digital technology, IT services, web development, cloud computing, digital transformation, technology solutions, USA tech company">
+    <link rel="canonical" href="https://digitalrl.com/">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo::before {
+            content: "⚡";
+            margin-right: 10px;
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff10" points="0,0 0,800 400,900 800,700 1000,900 1000,0"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            border-radius: 30px 30px 0 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .section {
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Blog Section */
+        .blog-post {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-date {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #ccc;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .typing-animation {
+            overflow: hidden;
+            border-right: 2px solid #667eea;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #667eea; }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Page-specific content initially hidden */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">DigitalRL</a>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showPage('home')">Home</a></li>
+                <li><a href="#about" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#services" onclick="showPage('services')">Services</a></li>
+                <li><a href="#blog" onclick="showPage('blog')">Blog</a></li>
+                <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#privacy" onclick="showPage('privacy')">Privacy</a></li>
+                <li><a href="#tos" onclick="showPage('tos')">Terms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="home" class="page-content active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Leading Digital Technology Solutions</h1>
+                <p>Transforming businesses across the USA with cutting-edge digital technology and innovative IT solutions</p>
+                <a href="#services" class="cta-button" onclick="showPage('services')">Explore Our Services</a>
+            </div>
+        </section>
+
+        <main>
+            <section class="section container visible">
+                <h2>Why Choose DigitalRL for Digital Technology?</h2>
+                <div class="grid">
+                    <div class="card">
+                        <span class="service-icon">🚀</span>
+                        <h4>Advanced Digital Solutions</h4>
+                        <p>We deliver state-of-the-art digital technology solutions that drive business growth and efficiency across the United States.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🔧</span>
+                        <h4>Expert IT Services</h4>
+                        <p>Our team of digital technology experts provides comprehensive IT services tailored to your business needs.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🌐</span>
+                        <h4>Nationwide Coverage</h4>
+                        <p>Serving businesses across all 50 states with reliable digital technology support and solutions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section container">
+                <h2>Our Digital Technology Expertise</h2>
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem; color: #666;">With over a decade of experience in digital technology, DigitalRL has helped thousands of businesses across the USA leverage cutting-edge IT solutions to achieve their goals.</p>
+                
+                <div class="grid">
+                    <div class="card">
+                        <span class="service-icon">☁️</span>
+                        <h3>Cloud Computing Excellence</h3>
+                        <p>Transform your business with our comprehensive cloud computing services. From AWS to Azure, we provide scalable cloud solutions that reduce costs and improve performance for businesses nationwide.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🔐</span>
+                        <h3>Advanced Cybersecurity</h3>
+                        <p>Protect your digital assets with our enterprise-grade cybersecurity solutions. We implement multi-layered security strategies to safeguard your business from evolving cyber threats.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">📱</span>
+                        <h3>Digital Transformation</h3>
+                        <p>Lead your industry with our digital transformation services. We help businesses modernize their operations, automate processes, and embrace new digital technologies.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section container">
+                <h2>Digital Technology Statistics</h2>
+                <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="stat-card" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <h3 style="font-size: 2.5rem; margin-bottom: 0.5rem;">500+</h3>
+                        <p>Businesses Served Nationwide</p>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <h3 style="font-size: 2.5rem; margin-bottom: 0.5rem;">99.9%</h3>
+                        <p>System Uptime Guarantee</p>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <h3 style="font-size: 2.5rem; margin-bottom: 0.5rem;">24/7</h3>
+                        <p>Technical Support Available</p>
+                    </div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; padding: 2rem; border-radius: 15px; text-align: center;">
+                        <h3 style="font-size: 2.5rem; margin-bottom: 0.5rem;">50</h3>
+                        <p>States Covered Across USA</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section container">
+                <h2>Industries We Serve with Digital Technology</h2>
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem; color: #666;">Our digital technology solutions serve diverse industries across the United States, helping businesses of all sizes achieve digital transformation.</p>
+                
+                <div class="grid">
+                    <div class="card">
+                        <span class="service-icon">🏥</span>
+                        <h4>Healthcare Technology</h4>
+                        <p>HIPAA-compliant digital solutions for healthcare providers, including electronic health records, telemedicine platforms, and medical device integration.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🏦</span>
+                        <h4>Financial Services</h4>
+                        <p>Secure digital banking solutions, fintech applications, and compliance management systems for financial institutions across the USA.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🏭</span>
+                        <h4>Manufacturing</h4>
+                        <p>Industrial IoT solutions, supply chain management systems, and automated manufacturing technologies for modern factories.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🏪</span>
+                        <h4>Retail & E-commerce</h4>
+                        <p>Digital commerce platforms, inventory management systems, and customer relationship management solutions for retail businesses.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🎓</span>
+                        <h4>Education Technology</h4>
+                        <p>E-learning platforms, student management systems, and digital classroom solutions for educational institutions.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🏗️</span>
+                        <h4>Real Estate</h4>
+                        <p>Property management systems, virtual tour technologies, and CRM solutions for real estate professionals and agencies.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section container">
+                <h2>Our Digital Technology Process</h2>
+                <div class="process-steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="process-step" style="text-align: center; padding: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">1</div>
+                        <h4>Consultation</h4>
+                        <p>We analyze your business needs and current digital technology infrastructure to identify opportunities for improvement.</p>
+                    </div>
+                    <div class="process-step" style="text-align: center; padding: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">2</div>
+                        <h4>Strategy</h4>
+                        <p>Our experts develop a customized digital technology strategy aligned with your business objectives and industry requirements.</p>
+                    </div>
+                    <div class="process-step" style="text-align: center; padding: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">3</div>
+                        <h4>Implementation</h4>
+                        <p>We deploy your digital technology solutions with minimal disruption to your operations, ensuring smooth integration.</p>
+                    </div>
+                    <div class="process-step" style="text-align: center; padding: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">4</div>
+                        <h4>Support</h4>
+                        <p>Ongoing technical support and maintenance ensure your digital technology solutions continue performing optimally.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section container">
+                <h2>Client Success Stories</h2>
+                <div class="testimonials" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="testimonial" style="background: #f8f9fa; padding: 2rem; border-radius: 15px; border-left: 4px solid #667eea;">
+                        <p style="font-style: italic; margin-bottom: 1rem;">"DigitalRL transformed our manufacturing operations with their IoT solutions. We've seen a 40% increase in efficiency since implementing their digital technology platform."</p>
+                        <strong>- Manufacturing Director, Texas</strong>
+                    </div>
+                    <div class="testimonial" style="background: #f8f9fa; padding: 2rem; border-radius: 15px; border-left: 4px solid #667eea;">
+                        <p style="font-style: italic; margin-bottom: 1rem;">"Their cloud migration services helped us reduce IT costs by 50% while improving our system performance. Excellent digital technology expertise!"</p>
+                        <strong>- CTO, California Tech Company</strong>
+                    </div>
+                    <div class="testimonial" style="background: #f8f9fa; padding: 2rem; border-radius: 15px; border-left: 4px solid #667eea;">
+                        <p style="font-style: italic; margin-bottom: 1rem;">"The cybersecurity solutions from DigitalRL gave us peace of mind. Their 24/7 monitoring has prevented multiple security incidents."</p>
+                        <strong>- IT Manager, New York Financial Firm</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section container">
+                <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 3rem; border-radius: 20px; text-align: center;">
+                    <h2 style="color: white; margin-bottom: 1rem;">Ready to Transform Your Business?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Join hundreds of businesses across the USA that trust DigitalRL for their digital technology needs. Get started with a free consultation today.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#contact" onclick="showPage('contact')" class="cta-button" style="background: white; color: #667eea;">Get Free Consultation</a>
+                        <a href="#services" onclick="showPage('services')" class="cta-button" style="background: transparent; border: 2px solid white;">View All Services</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="about" class="page-content">
+        <main style="margin-top: 80px;">
+            <section class="section container">
+                <h1>About DigitalRL - Your Digital Technology Partner</h1>
+                <p>DigitalRL is a leading digital technology company serving businesses across the United States. Founded with a vision to transform how businesses leverage digital technology, we have become a trusted partner for companies seeking innovative IT solutions.</p>
+                
+                <h2>Our Digital Technology Expertise</h2>
+                <p>With over a decade of experience in digital technology, our team specializes in delivering comprehensive IT solutions that drive business success. We understand the evolving landscape of digital transformation and help businesses navigate the complexities of modern technology.</p>
+                
+                <h3>Our Mission in Digital Technology</h3>
+                <p>To empower businesses across the USA with cutting-edge digital technology solutions that enhance productivity, security, and growth. We believe in making advanced technology accessible and manageable for businesses of all sizes.</p>
+                
+                <h3>Why We're Leaders in Digital Technology</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Innovation-Driven Approach</h4>
+                        <p>We stay at the forefront of digital technology trends, ensuring our clients benefit from the latest innovations in IT solutions.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Experienced Team</h4>
+                        <p>Our digital technology experts bring years of experience in cloud computing, cybersecurity, and enterprise solutions.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Client-Centric Solutions</h4>
+                        <p>Every digital technology solution we provide is tailored to meet the unique needs and goals of our clients.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="services" class="page-content">
+        <main style="margin-top: 80px;">
+            <section class="section container">
+                <h1>Digital Technology Services - Comprehensive IT Solutions</h1>
+                <p>DigitalRL offers a full spectrum of digital technology services designed to meet the diverse needs of businesses across the USA. Our expert team delivers innovative solutions that drive digital transformation and business growth.</p>
+                
+                <h2>Our Core Digital Technology Services</h2>
+                
+                <div class="grid">
+                    <div class="card">
+                        <span class="service-icon">☁️</span>
+                        <h3>Cloud Computing Solutions</h3>
+                        <p>Leverage the power of cloud technology with our comprehensive cloud computing services. From migration to management, we ensure your business benefits from scalable, secure cloud infrastructure.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🔒</span>
+                        <h3>Cybersecurity Services</h3>
+                        <p>Protect your digital assets with our advanced cybersecurity solutions. We provide comprehensive security assessments, threat monitoring, and incident response services.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">💻</span>
+                        <h3>Web Development</h3>
+                        <p>Create powerful digital experiences with our custom web development services. We build responsive, user-friendly websites that drive engagement and conversions.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">📱</span>
+                        <h3>Mobile App Development</h3>
+                        <p>Reach your customers on the go with our mobile app development services. We create native and cross-platform applications that deliver exceptional user experiences.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">🔧</span>
+                        <h3>IT Infrastructure Management</h3>
+                        <p>Optimize your technology infrastructure with our managed IT services. We provide 24/7 monitoring, maintenance, and support for all your digital technology needs.</p>
+                    </div>
+                    <div class="card">
+                        <span class="service-icon">📊</span>
+                        <h3>Data Analytics Solutions</h3>
+                        <p>Transform your data into actionable insights with our analytics services. We help businesses make informed decisions through advanced data analysis and reporting.</p>
+                    </div>
+                </div>
+                
+                <h3>Why Choose Our Digital Technology Services?</h3>
+                <p>Our digital technology services are designed to provide maximum value and ROI for your business. We combine technical expertise with strategic thinking to deliver solutions that not only meet your current needs but also position you for future growth.</p>
+            </section>
+        </main>
+    </div>
+
+    <div id="blog" class="page-content">
+        <main style="margin-top: 80px;">
+            <section class="section container">
+                <h1>Digital Technology Blog - Latest Tech Insights</h1>
+                <p>Stay updated with the latest trends, insights, and best practices in digital technology. Our blog covers everything from cloud computing to cybersecurity, helping you make informed decisions about your technology strategy.</p>
+                
+                <h2>Latest Digital Technology Articles</h2>
+                
+                <article class="blog-post">
+                    <div class="blog-date">July 12, 2025</div>
+                    <h3>The Future of Cloud Computing in Digital Transformation</h3>
+                    <p>Explore how cloud computing continues to reshape digital transformation strategies for businesses across the USA. Learn about emerging trends in cloud technology and their impact on enterprise operations.</p>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="blog-date">July 10, 2025</div>
+                    <h3>Cybersecurity Best Practices for Small Businesses</h3>
+                    <p>Discover essential cybersecurity measures that small businesses should implement to protect their digital assets. This comprehensive guide covers threat prevention, detection, and response strategies.</p>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="blog-date">July 8, 2025</div>
+                    <h3>AI and Machine Learning in Modern IT Solutions</h3>
+                    <p>Learn how artificial intelligence and machine learning are revolutionizing IT solutions and digital technology applications. Explore practical implementations and business benefits.</p>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="blog-date">July 5, 2025</div>
+                    <h3>Digital Technology Trends Shaping 2025</h3>
+                    <p>Stay ahead of the curve with our analysis of the most significant digital technology trends for 2025. From edge computing to quantum technology, discover what's next in tech innovation.</p>
+                </article>
+                
+                <h3>Subscribe to Our Digital Technology Newsletter</h3>
+                <p>Get the latest digital technology insights delivered directly to your inbox. Subscribe to our newsletter for exclusive content, industry updates, and expert analysis.</p>
+            </section>
+        </main>
+    </div>
+
+    <div id="contact" class="page-content">
+        <main style="margin-top: 80px;">
+            <section class="section container">
+                <h1>Contact DigitalRL - Your Digital Technology Partner</h1>
+                <p>Ready to transform your business with cutting-edge digital technology solutions? Get in touch with our team of experts serving businesses across the United States.</p>
+                
+                <h2>Get Your Digital Technology Consultation</h2>
+                
+                <div class="grid">
+                    <div class="card">
+                        <h3>Phone Support</h3>
+                        <p>Call us for immediate assistance with your digital technology needs:</p>
+                        <p><strong>1-800-DIGITALRL</strong></p>
+                        <p>Available Monday-Friday, 8 AM - 6 PM EST</p>
+                    </div>
+                    <div class="card">
+                        <h3>Email Us</h3>
+                        <p>Send us your digital technology questions:</p>
+                        <p><strong>info@digitalrl.com</strong></p>
+                        <p>We respond within 24 hours</p>
+                    </div>
+                    <div class="card">
+                        <h3>Nationwide Service</h3>
+                        <p>We serve businesses across all 50 states with comprehensive digital technology solutions.</p>
+                        <p><strong>Headquarters:</strong> New York, NY</p>
+                        <p><strong>Service Area:</strong> United States</p>
+                    </div>
+                </div>
+                
+                <h3>Digital Technology Services by State</h3>
+                <p>DigitalRL provides expert digital technology services to businesses in all major US cities including New York, Los Angeles, Chicago, Houston, Phoenix, Philadelphia, San Antonio, San Diego, Dallas, San Jose, Austin, Jacksonville, Fort Worth, Columbus, Charlotte, San Francisco, Indianapolis, Seattle, Denver, and Washington DC.</p>
+                
+                <h3>Why Contact DigitalRL?</h3>
+                <p>When you contact DigitalRL, you're connecting with digital technology experts who understand your business needs. Our team provides personalized consultations to help you identify the right technology solutions for your specific requirements.</p>
+            </section>
+        </main>
+    </div>
+
+    <div id="privacy" class="page-content">
+        <main style="margin-top: 80px;">
+            <section class="section container">
+                <h1>Privacy Policy - DigitalRL Digital Technology Services</h1>
+                <p><strong>Last Updated:</strong> July 14, 2025</p>
+                
+                <h2>Our Commitment to Privacy</h2>
+                <p>At DigitalRL, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and protect your data when you use our digital technology services.</p>
+                
+                <h3>Information We Collect</h3>
+                <p>We collect information necessary to provide our digital technology services, including:</p>
+                <ul>
+                    <li>Contact information (name, email, phone number)</li>
+                    <li>Business information for service delivery</li>
+                    <li>Technical information for IT support services</li>
+                    <li>Website usage data for improving our digital technology solutions</li>
+                </ul>
+                
+                <h3>How We Use Your Information</h3>
+                <p>Your information is used to:</p>
+                <ul>
+                    <li>Provide digital technology services and support</li>
+                    <li>Communicate about our IT solutions and services</li>
+                    <li>Improve our digital technology offerings</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+                
+                <h3>Data Security</h3>
+                <p>As a digital technology company, we implement robust security measures to protect your data, including encryption, secure servers, and regular security audits. We follow industry best practices for data protection and cybersecurity.</p>
+                
+                <h3>Your Rights</h3>
+                <p>You have the right to access, update, or delete your personal information. Contact us at privacy@digitalrl.com for any privacy-related requests.</p>
+                
+                <h3>Contact Information</h3>
+                <p>For questions about this Privacy Policy or our digital technology services, contact us at:</p>
+                <p>Email: privacy@digitalrl.com<br>
+                Phone: 1-800-DIGITALRL</p>
+            </section>
+        </main>
+    </div>
+
+    <div id="tos" class="page-content">
+        <main style="margin-top: 80px;">
+            <section class="section container">
+                <h1>Terms of Service - DigitalRL Digital Technology Solutions</h1>
+                <p><strong>Last Updated:</strong> July 14, 2025</p>
+                
+                <h2>Agreement to Terms</h2>
+                <p>By using DigitalRL's digital technology services, you agree to these Terms of Service. These terms govern your use of our IT solutions and services across the United States.</p>
+                
+                <h3>Our Digital Technology Services</h3>
+                <p>DigitalRL provides comprehensive digital technology solutions including but not limited to:</p>
+                <ul>
+                    <li>Cloud computing services</li>
+                    <li>Cybersecurity solutions</li>
+                    <li>Web and mobile development</li>
+                    <li>IT infrastructure management</li>
+                    <li>Data analytics and consulting</li>
+                </ul>
+                
+                <h3>Service Availability</h3>
+                <p>Our digital technology services are available to businesses across the United States. We strive to maintain 99.9% uptime for our cloud-based solutions and provide 24/7 support for critical IT services.</p>
+                
+                <h3>User Responsibilities</h3>
+                <p>When using our digital technology services, you agree to:</p>
+                <ul>
+                    <li>Provide accurate information for service delivery</li>
+                    <li>Use services in compliance with applicable laws</li>
+                    <li>Maintain the security of your account credentials</li>
+                    <li>Report any security issues promptly</li>
+                </ul>
+                
+                <h3>Intellectual Property</h3>
+                <p>All proprietary digital technology solutions, software, and methodologies developed by DigitalRL remain our intellectual property. Clients receive usage rights as specified in their service agreements.</p>
+                
+                <h3>Limitation of Liability</h3>
+                <p>DigitalRL's liability for digital technology services is limited as outlined in individual service agreements. We maintain professional liability insurance and follow industry standards for service delivery.</p>
+                
+                <h3>Governing Law</h3>
+                <p>These Terms of Service are governed by the laws of the State of New York and applicable federal laws of the United States.</p>
+                
+                <h3>Contact Information</h3>
+                <p>For questions about these Terms of Service or our digital technology solutions:</p>
+                <p>Email: legal@digitalrl.com<br>
+                Phone: 1-800-DIGITALRL</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DigitalRL Digital Technology</h4>
+                    <p>Leading provider of digital technology solutions across the United States. We specialize in cloud computing, cybersecurity, and digital transformation services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Cloud Computing</a></li>
+                        <li><a href="#services">Cybersecurity</a></li>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">IT Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@digitalrl.com</p>
+                    <p>Phone: 1-800-DIGITALRL</p>
+                    <p>Service Area: United States</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DigitalRL. All rights reserved. Leading digital technology solutions provider in the USA.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.querySelector(`a[href="#${pageId}"]`).classList.add('active');
+        }
+
+        // Scroll animations
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.section');
+            elements.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            animateOnScroll();
+        });
+
+        // Animate elements on scroll
+        window.addEventListener('scroll', () => {
+            animateOnScroll();
+        });
+
+        // Particle animation for hero section
+        function createParticles() {
+            const hero = document.querySelector('.hero');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = '2px';
+                particle.style.height = '2px';
+                particle.style.background = 'rgba(255, 255, 255, 0.5)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                hero.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        createParticles();
+
+        // Mobile menu toggle (basic implementation)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+
+        // Add mobile menu styles
+        const mobileStyles = `
+            @media (max-width: 768px) {
+                .nav-links {
+                    position: fixed;
+                    top: 70px;
+                    left: -100%;
+                    width: 100%;
+                    height: calc(100vh - 70px);
+                    background: rgba(255, 255, 255, 0.95);
+                    backdrop-filter: blur(10px);
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: start;
+                    padding-top: 2rem;
+                    transition: left 0.3s ease;
+                }
+                
+                .nav-links.mobile-active {
+                    left: 0;
+                }
+                
+                .mobile-menu-btn {
+                    display: block;
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+            }
+        `;
+
+        // Add mobile styles to head
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = mobileStyles;
+        document.head.appendChild(styleSheet);
+
+        // Add mobile menu button
+        const nav = document.querySelector('nav');
+        const mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.className = 'mobile-menu-btn';
+        mobileMenuBtn.innerHTML = '☰';
+        mobileMenuBtn.onclick = toggleMobileMenu;
+        nav.appendChild(mobileMenuBtn);
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('mobile-active');
+            });
+        });
+
+        // Typing animation for hero text
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing animation
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                // Remove typing animation class and just show the text
+                heroTitle.classList.remove('typing-animation');
+                heroTitle.style.animation = 'fadeInUp 1s ease-out';
+            }
+            
+            // Make sure home page sections are visible
+            const homeSections = document.querySelectorAll('#home .section');
+            homeSections.forEach(section => {
+                section.classList.add('visible');
+            });
+        });
+
+        // Enhanced scroll effects
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const header = document.querySelector('header');
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // Add transition to header
+        document.querySelector('header').style.transition = 'transform 0.3s ease';
+
+        // Counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                element.textContent = Math.floor(current);
+                
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                }
+            }, 16);
+        }
+
+        // Interactive card hover effects
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            });
+        });
+
+        // Smooth page transitions
+        function smoothTransition(callback) {
+            document.body.style.opacity = '0.7';
+            document.body.style.transition = 'opacity 0.3s ease';
+            
+            setTimeout(() => {
+                callback();
+                document.body.style.opacity = '1';
+            }, 300);
+        }
+
+        // Enhanced showPage function with smooth transitions
+        const originalShowPage = showPage;
+        showPage = function(pageId) {
+            smoothTransition(() => {
+                originalShowPage(pageId);
+                
+                // Reinitialize animations for the new page
+                setTimeout(() => {
+                    animateOnScroll();
+                }, 100);
+            });
+        };
+
+        // Loading animation
+        function showLoading() {
+            const loader = document.createElement('div');
+            loader.id = 'loader';
+            loader.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10000;
+                    color: white;
+                    font-size: 1.5rem;
+                ">
+                    <div style="text-align: center;">
+                        <div style="margin-bottom: 1rem;">⚡</div>
+                        <div>Loading Digital Technology Solutions...</div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(loader);
+            
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    if (loader.parentNode) {
+                        loader.parentNode.removeChild(loader);
+                    }
+                }, 500);
+            }, 1000);
+        }
+
+        // Show loading on page load
+        window.addEventListener('load', showLoading);
+
+        // Add search functionality
+        function addSearchFeature() {
+            const searchHTML = `
+                <div id="search-container" style="
+                    position: fixed;
+                    top: -100%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.9);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999;
+                    transition: top 0.3s ease;
+                ">
+                    <div style="text-align: center; color: white;">
+                        <input type="text" id="search-input" placeholder="Search digital technology solutions..." style="
+                            padding: 1rem;
+                            font-size: 1.2rem;
+                            border: none;
+                            border-radius: 25px;
+                            width: 300px;
+                            margin-bottom: 1rem;
+                        ">
+                        <div>
+                            <button onclick="closeSearch()" style="
+                                background: #667eea;
+                                color: white;
+                                border: none;
+                                padding: 0.5rem 1rem;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                margin: 0 0.5rem;
+                            ">Close</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', searchHTML);
+        }
+
+        function openSearch() {
+            document.getElementById('search-container').style.top = '0';
+            document.getElementById('search-input').focus();
+        }
+
+        function closeSearch() {
+            document.getElementById('search-container').style.top = '-100%';
+        }
+
+        // Add search feature
+        addSearchFeature();
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'k') {
+                e.preventDefault();
+                openSearch();
+            }
+            if (e.key === 'Escape') {
+                closeSearch();
+            }
+        });
+
+        // Performance optimization
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Debounce scroll events
+        const debouncedScrollHandler = debounce(() => {
+            animateOnScroll();
+        }, 10);
+
+        window.addEventListener('scroll', debouncedScrollHandler);
+
+        // Analytics tracking (placeholder)
+        function trackPageView(page) {
+            console.log(`Page view: ${page}`);
+            // Add your analytics tracking code here
+        }
+
+        // Track initial page view
+        trackPageView('home');
+
+        // Track page changes
+        const originalShowPageTracked = showPage;
+        showPage = function(pageId) {
+            trackPageView(pageId);
+            originalShowPageTracked(pageId);
+        };
+    </script>
+</body>
+</html>
