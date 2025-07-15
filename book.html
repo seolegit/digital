@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Optimized Meta Tags -->
+    <title>ProLedger Bookkeeping | Professional Financial Management Services</title>
+    <meta name="description" content="Professional bookkeeping services for small businesses. Accurate financial tracking, tax preparation, and financial reporting. Free consultation available.">
+    <meta name="keywords" content="bookkeeping services, financial management, accounting, small business accounting, tax preparation, financial reporting, payroll services">
+    <meta name="author" content="ProLedger Bookkeeping">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ProLedger Bookkeeping | Professional Financial Management">
+    <meta property="og:description" content="Expert bookkeeping services to help your business thrive. Accurate, reliable, and affordable financial solutions.">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #1abc9c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            animation: rotate 20s linear infinite;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 3.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* Services */
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            height: 80px;
+            width: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Features */
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            margin: 20px;
+        }
+        
+        .testimonial:after {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(26, 188, 156, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .client-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+        }
+        
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--secondary) 0%, #2980b9 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 0;
+        }
+        
+        .footer-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            background: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Cookie Consent */
+        .cookie-consent {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 500px;
+            display: none;
+        }
+        
+        /* Blog Modal */
+        .blog-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            position: relative;
+            animation: modalIn 0.5s ease;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .blog-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        /* Blog Page */
+        .blog-page {
+            display: none;
+        }
+        
+        .blog-list {
+            margin-top: 40px;
+        }
+        
+        .blog-card {
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: white;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .back-btn {
+            margin-top: 30px;
+        }
+        
+        /* Keyframe animations */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes modalIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .modal-content {
+                margin: 20px auto;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ProLedger Bookkeeping</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-2" href="#contact">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content animate-on-scroll">
+                    <h1 class="animate__animated animate__fadeInDown">Professional Bookkeeping Solutions</h1>
+                    <p class="animate__animated animate__fadeIn animate__delay-1s">Accurate financial tracking and reporting for your business. Focus on growth while we handle your numbers.</p>
+                    <div class="d-flex gap-3 animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="#services" class="btn btn-light btn-lg">Our Services</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800" alt="Bookkeeping" class="img-fluid rounded animate__animated animate__zoomIn animate__delay-1s" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Our Bookkeeping Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Accounts Management</h3>
+                            <p>Comprehensive management of accounts payable and receivable to ensure healthy cash flow.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Financial Reporting</h3>
+                            <p>Detailed financial statements and reports to help you make informed business decisions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Tax Preparation</h3>
+                            <p>Professional tax preparation and filing services to maximize deductions and ensure compliance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-money-check"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Payroll Processing</h3>
+                            <p>Accurate and timely payroll processing with tax withholding and reporting.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Budgeting & Forecasting</h3>
+                            <p>Strategic financial planning to help your business grow and achieve its financial goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="card-body text-center">
+                            <h3>Cloud Bookkeeping</h3>
+                            <p>Modern cloud-based solutions for real-time financial tracking from anywhere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800" alt="Financial Analysis" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <h2>Why Choose Our Bookkeeping Services?</h2>
+                    <p class="lead">We provide accurate, timely, and comprehensive financial services tailored to your business needs.</p>
+                    
+                    <div class="mt-5">
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-4">
+                                <h4>Accuracy Guaranteed</h4>
+                                <p>Our meticulous approach ensures error-free financial records for your business.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-4">
+                                <h4>Timely Reporting</h4>
+                                <p>Receive your financial statements when you need them for informed decision-making.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="feature-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-4">
+                                <h4>Data Security</h4>
+                                <p>Your financial data is protected with industry-leading security measures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="testimonial">
+                        <p>"ProLedger transformed our financial management. Their bookkeeping services helped us reduce costs by 15% in the first quarter."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100" alt="Client" class="client-img">
+                            <div class="ms-3">
+                                <h5 class="mb-0">Michael Johnson</h5>
+                                <p class="text-muted mb-0">CEO, TechSolutions Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="testimonial">
+                        <p>"The financial reporting we receive is exceptional. It gives us clear insights to make strategic business decisions with confidence."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100" alt="Client" class="client-img">
+                            <div class="ms-3">
+                                <h5 class="mb-0">Sarah Williams</h5>
+                                <p class="text-muted mb-0">Owner, Bloom Boutique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="testimonial">
+                        <p>"Their tax preparation service saved us thousands in deductions we didn't know we qualified for. Worth every penny!"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100" alt="Client" class="client-img">
+                            <div class="ms-3">
+                                <h5 class="mb-0">Robert Chen</h5>
+                                <p class="text-muted mb-0">Founder, GreenEats Restaurant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Bookkeeping Insights</h2>
+            <p class="text-center mb-5 animate-on-scroll">Latest articles on financial management, tax strategies, and business growth.</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4 animate-on-scroll">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600" class="card-img-top" alt="Financial Planning">
+                        <div class="card-body">
+                            <h5 class="card-title">5 Essential Bookkeeping Practices for Small Businesses</h5>
+                            <p class="card-text">Learn the fundamental bookkeeping practices that every small business owner should implement for financial health.</p>
+                            <button class="btn btn-link read-more" data-blog="1">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4 animate-on-scroll">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600" class="card-img-top" alt="Tax Tips">
+                        <div class="card-body">
+                            <h5 class="card-title">Tax Deductions You Might Be Missing</h5>
+                            <p class="card-text">Discover often overlooked tax deductions that can save your business money during tax season.</p>
+                            <button class="btn btn-link read-more" data-blog="2">Read More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4 animate-on-scroll">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600" class="card-img-top" alt="Cloud Accounting">
+                        <div class="card-body">
+                            <h5 class="card-title">Transitioning to Cloud-Based Accounting</h5>
+                            <p class="card-text">How moving to cloud-based accounting solutions can streamline your financial management processes.</p>
+                            <button class="btn btn-link read-more" data-blog="3">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4 animate-on-scroll">
+                <button id="view-all-blogs" class="btn btn-primary">View All Blog Posts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-6 animate-on-scroll">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="p-4">
+                        <h3>Get in Touch</h3>
+                        <p>Have questions about our bookkeeping services? Reach out to our team for a free consultation.</p>
+                        
+                        <div class="mt-5">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary text-white rounded-circle p-3">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Our Location</h5>
+                                    <p class="mb-0">123 Financial District, San Francisco, CA 94111</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary text-white rounded-circle p-3">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Call Us</h5>
+                                    <p class="mb-0">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary text-white rounded-circle p-3">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Email Us</h5>
+                                    <p class="mb-0">info@proledgerbookkeeping.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center animate-on-scroll">
+                    <h2 class="mb-4">Ready to Streamline Your Bookkeeping?</h2>
+                    <p class="lead mb-5">Schedule a free consultation with our financial experts today and discover how we can help your business thrive.</p>
+                    <a href="#contact" class="btn btn-light btn-lg me-2">Get Started</a>
+                    <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">ProLedger Bookkeeping</h4>
+                    <p>Professional bookkeeping services designed to help small and medium businesses maintain accurate financial records and make informed decisions.</p>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Accounts Management</a></li>
+                        <li><a href="#">Financial Reporting</a></li>
+                        <li><a href="#">Tax Preparation</a></li>
+                        <li><a href="#">Payroll Processing</a></li>
+                        <li><a href="#">Budgeting & Forecasting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                        <li><a href="#" id="tos-link">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright text-center">
+                <p class="mb-0">&copy; 2023 ProLedger Bookkeeping. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent animate-on-scroll">
+        <div class="d-flex align-items-center">
+            <div class="flex-grow-1">
+                <p class="mb-0">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            </div>
+            <div class="flex-shrink-0 ms-3">
+                <button id="acceptCookies" class="btn btn-primary btn-sm">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Modals -->
+    <div class="blog-modal" id="blog-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="blog-content" id="blog-content">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Page -->
+    <div id="blog-page" class="blog-page section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Bookkeeping Blog</h2>
+                <p class="lead mb-5">Explore our latest articles on financial management, tax strategies, and business growth.</p>
+            </div>
+            
+            <div class="blog-list">
+                <div class="row">
+                    <!-- Blog posts will be dynamically added here -->
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button id="back-to-home" class="btn btn-primary back-btn">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Page -->
+    <div id="privacy-page" class="blog-page section" style="display: none;">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Privacy Policy</h2>
+            </div>
+            
+            <div class="mt-5">
+                <h3>1. Introduction</h3>
+                <p>ProLedger Bookkeeping ("we", "us", or "our") respects your privacy and is committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
+                
+                <h3>2. The Data We Collect About You</h3>
+                <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
+                <ul>
+                    <li>Identity Data: includes first name, last name, username or similar identifier</li>
+                    <li>Contact Data: includes billing address, delivery address, email address and telephone numbers</li>
+                    <li>Technical Data: includes internet protocol (IP) address, browser type and version, time zone setting and location</li>
+                    <li>Usage Data: includes information about how you use our website and services</li>
+                </ul>
+                
+                <h3>3. How We Use Your Personal Data</h3>
+                <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
+                <ul>
+                    <li>Where we need to perform the contract we are about to enter into or have entered into with you</li>
+                    <li>Where it is necessary for our legitimate interests and your interests and fundamental rights do not override those interests</li>
+                    <li>Where we need to comply with a legal obligation</li>
+                </ul>
+                
+                <div class="text-center mt-5">
+                    <button class="btn btn-primary back-btn">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Page -->
+    <div id="tos-page" class="blog-page section" style="display: none;">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Terms of Service</h2>
+            </div>
+            
+            <div class="mt-5">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing or using the services provided by ProLedger Bookkeeping ("we", "us", or "our"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+                
+                <h3>2. Services Provided</h3>
+                <p>We provide professional bookkeeping and financial management services including but not limited to:</p>
+                <ul>
+                    <li>Accounts payable and receivable management</li>
+                    <li>Financial reporting and analysis</li>
+                    <li>Tax preparation and filing</li>
+                    <li>Payroll processing</li>
+                    <li>Budgeting and forecasting</li>
+                </ul>
+                
+                <h3>3. Client Responsibilities</h3>
+                <p>As a client, you agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete information necessary for us to perform our services</li>
+                    <li>Notify us promptly of any changes to your business or financial situation</li>
+                    <li>Review all reports and documents we provide in a timely manner</li>
+                    <li>Make timely payments for services rendered</li>
+                </ul>
+                
+                <h3>4. Limitation of Liability</h3>
+                <p>To the maximum extent permitted by law, ProLedger Bookkeeping shall not be liable for any indirect, incidental, special, consequential or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:</p>
+                <ul>
+                    <li>Your access to or use of or inability to access or use the services</li>
+                    <li>Any conduct or content of any third party on the services</li>
+                    <li>Any content obtained from the services</li>
+                    <li>Unauthorized access, use or alteration of your transmissions or content</li>
+                </ul>
+                
+                <div class="text-center mt-5">
+                    <button class="btn btn-primary back-btn">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Blog content data
+        const blogPosts = [
+            {
+                id: 1,
+                title: "5 Essential Bookkeeping Practices for Small Businesses",
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                content: `
+                    <h3>Introduction</h3>
+                    <p>Effective bookkeeping is the backbone of any successful small business. Without accurate financial records, making informed decisions becomes challenging, and tax season can become a nightmare. In this article, we'll explore five essential bookkeeping practices that every small business owner should implement to maintain financial health and ensure long-term success.</p>
+                    
+                    <h3>1. Separate Business and Personal Finances</h3>
+                    <p>One of the most critical steps for small business owners is to completely separate business and personal finances. This means:</p>
+                    <ul>
+                        <li>Opening a dedicated business checking account</li>
+                        <li>Obtaining a business credit card</li>
+                        <li>Never using business funds for personal expenses</li>
+                        <li>Paying yourself a salary rather than dipping into business funds</li>
+                    </ul>
+                    <p>This separation not only simplifies record-keeping but also provides legal protection and makes tax preparation significantly easier.</p>
+                    
+                    <h3>2. Implement a Consistent Recording System</h3>
+                    <p>Consistency is key in bookkeeping. Choose a system (whether software like QuickBooks or Xero, or a manual system) and stick to it. Your system should include:</p>
+                    <ul>
+                        <li>Regular recording of all income and expenses</li>
+                        <li>Categorization of transactions</li>
+                        <li>Monthly reconciliation of bank accounts</li>
+                        <li>Secure storage of financial documents</li>
+                    </ul>
+                    <p>Set aside dedicated time each week to update your records. Consistency prevents backlog and ensures accuracy.</p>
+                    
+                    <h3>3. Track Expenses Meticulously</h3>
+                    <p>Every business expense, no matter how small, should be tracked. Implement a system to:</p>
+                    <ul>
+                        <li>Capture receipts immediately (consider using mobile apps)</li>
+                        <li>Record the purpose of each expense</li>
+                        <li>Categorize expenses correctly for tax purposes</li>
+                        <li>Track mileage for business travel</li>
+                    </ul>
+                    <p>Accurate expense tracking ensures you maximize tax deductions and understand where your money is going.</p>
+                    
+                    <h3>4. Monitor Accounts Receivable Closely</h3>
+                    <p>Cash flow is the lifeblood of any small business. To maintain healthy cash flow:</p>
+                    <ul>
+                        <li>Invoice promptly and follow up on overdue payments</li>
+                        <li>Implement clear payment terms</li>
+                        <li>Offer multiple payment options to clients</li>
+                        <li>Regularly review your accounts receivable aging report</li>
+                    </ul>
+                    <p>Consider implementing automated invoicing and payment reminders to streamline this process.</p>
+                    
+                    <h3>5. Perform Regular Financial Reviews</h3>
+                    <p>Don't wait until tax time to review your financial position. Schedule monthly or quarterly reviews to:</p>
+                    <ul>
+                        <li>Analyze profit and loss statements</li>
+                        <li>Review balance sheets</li>
+                        <li>Monitor key financial ratios</li>
+                        <li>Compare actual performance to budget</li>
+                    </ul>
+                    <p>These regular check-ins help you spot trends, identify potential problems early, and make informed business decisions.</p>
+                    
+                    <h3>Conclusion</h3>
+                    <p>Implementing these five essential bookkeeping practices will provide a solid financial foundation for your small business. While it may seem time-consuming initially, the long-term benefits of accurate financial records, better cash flow management, and simplified tax preparation make the effort worthwhile. If you find bookkeeping overwhelming, consider working with a professional bookkeeper who can help establish these systems and ensure your financial records are accurate and compliant.</p>
+                `
+            },
+            {
+                id: 2,
+                title: "Tax Deductions You Might Be Missing",
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                content: `
+                    <h3>Introduction</h3>
+                    <p>As a business owner, maximizing your tax deductions is crucial for minimizing your tax liability and keeping more of your hard-earned money. However, many entrepreneurs overlook valuable deductions simply because they're unaware of them or don't maintain proper records. In this article, we'll uncover several often-missed tax deductions that could save your business significant money.</p>
+                    
+                    <h3>1. Home Office Deduction</h3>
+                    <p>If you use part of your home regularly and exclusively for business, you may qualify for the home office deduction. Many business owners either forget to claim this or are afraid to because of audit concerns. There are two methods:</p>
+                    <ul>
+                        <li><strong>Simplified method:</strong> $5 per square foot of home used for business (up to 300 square feet)</li>
+                        <li><strong>Regular method:</strong> Based on actual expenses (mortgage interest, insurance, utilities, repairs, etc.)</li>
+                    </ul>
+                    <p>Keep detailed records of your home expenses and measurements to support your claim.</p>
+                    
+                    <h3>2. Startup Costs</h3>
+                    <p>Many new business owners don't realize they can deduct up to $5,000 in startup costs in their first year of operation. These include expenses incurred before you officially opened for business, such as:</p>
+                    <ul>
+                        <li>Market research</li>
+                        <li>Training expenses</li>
+                        <li>Travel related to setting up your business</li>
+                        <li>Legal and accounting fees</li>
+                    </ul>
+                    <p>Amounts over $5,000 must be amortized over 15 years, but still provide valuable deductions.</p>
+                    
+                    <h3>3. Education and Training</h3>
+                    <p>Ongoing education related to your business is fully deductible. This includes:</p>
+                    <ul>
+                        <li>Workshops and conferences</li>
+                        <li>Industry publications and subscriptions</li>
+                        <li>Online courses</li>
+                        <li>Books and educational materials</li>
+                    </ul>
+                    <p>Ensure the education maintains or improves skills required in your current business.</p>
+                    
+                    <h3>4. Vehicle Expenses</h3>
+                    <p>Business use of your vehicle is deductible, but many business owners don't track mileage adequately. You have two options:</p>
+                    <ul>
+                        <li><strong>Standard mileage rate:</strong> Multiply business miles by the IRS rate (65.5 cents/mile for 2023)</li>
+                        <li><strong>Actual expenses method:</strong> Track all vehicle expenses and deduct the business percentage</li>
+                    </ul>
+                    <p>Whichever method you choose, maintain a detailed mileage log with dates, destinations, purposes, and odometer readings.</p>
+                    
+                    <h3>5. Retirement Plan Contributions</h3>
+                    <p>Contributions to retirement plans like SEP-IRAs, SIMPLE IRAs, or solo 401(k)s are deductible business expenses. Many small business owners focus on immediate expenses but neglect this valuable deduction that also secures their financial future.</p>
+                    
+                    <h3>Conclusion</h3>
+                    <p>Taking advantage of all available tax deductions requires careful record-keeping and awareness of tax laws. By implementing systems to track these often-overlooked deductions, you can significantly reduce your tax liability. Consider working with a tax professional who specializes in small business taxation to ensure you're not leaving money on the table.</p>
+                `
+            },
+            {
+                id: 3,
+                title: "Transitioning to Cloud-Based Accounting",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800",
+                content: `
+                    <h3>Introduction</h3>
+                    <p>The accounting world has undergone a significant transformation with the advent of cloud technology. Cloud-based accounting solutions offer numerous advantages over traditional desktop software, including real-time access, automatic updates, and enhanced collaboration. If you're still using desktop accounting software or manual systems, transitioning to the cloud could revolutionize your financial management. This guide will walk you through the benefits and steps to make a smooth transition.</p>
+                    
+                    <h3>Benefits of Cloud-Based Accounting</h3>
+                    <p>Before making the switch, it's important to understand the key advantages:</p>
+                    <ul>
+                        <li><strong>Accessibility:</strong> Access your financial data anytime, anywhere from any device</li>
+                        <li><strong>Real-time updates:</strong> See your financial position in real-time rather than waiting for month-end</li>
+                        <li><strong>Automatic backups:</strong> Your data is securely backed up automatically</li>
+                        <li><strong>Integration:</strong> Seamless integration with other business tools (banking, payroll, CRM)</li>
+                        <li><strong>Collaboration:</strong> Multiple users can access the system simultaneously</li>
+                        <li><strong>Cost-effective:</strong> Typically subscription-based with no large upfront costs</li>
+                    </ul>
+                    
+                    <h3>Choosing the Right Cloud Accounting Solution</h3>
+                    <p>The market offers several excellent options. Consider these factors when choosing:</p>
+                    <ul>
+                        <li><strong>Business size and complexity:</strong> Solutions range from simple (Wave) to comprehensive (QuickBooks Online, Xero)</li>
+                        <li><strong>Features needed:</strong> Inventory tracking, project accounting, multi-currency, etc.</li>
+                        <li><strong>Integration requirements:</strong> What other software do you need to connect?</li>
+                        <li><strong>Budget:</strong> Monthly subscription costs vary significantly</li>
+                        <li><strong>Scalability:</strong> Will it grow with your business?</li>
+                    </ul>
+                    <p>Take advantage of free trials to test different platforms before committing.</p>
+                    
+                    <h3>Steps for a Successful Transition</h3>
+                    <p>Follow these steps to ensure a smooth migration to cloud accounting:</p>
+                    <ol>
+                        <li><strong>Prepare your data:</strong> Clean up your existing records before migration</li>
+                        <li><strong>Choose the right timing:</strong> Transition at the end of a financial period if possible</li>
+                        <li><strong>Set up your chart of accounts:</strong> Customize to match your business needs</li>
+                        <li><strong>Migrate opening balances:</strong> Ensure accurate starting balances for all accounts</li>
+                        <li><strong>Connect bank accounts:</strong> Set up bank feeds for automatic transaction import</li>
+                        <li><strong>Train your team:</strong> Ensure everyone understands the new system</li>
+                        <li><strong>Run parallel systems:</strong> Initially run both systems to ensure accuracy</li>
+                    </ol>
+                    
+                    <h3>Best Practices After Transition</h3>
+                    <p>Once you've made the switch, adopt these practices:</p>
+                    <ul>
+                        <li><strong>Regular reconciliation:</strong> Reconcile accounts at least monthly</li>
+                        <li><strong>Leverage automation:</strong> Use rules for recurring transactions</li>
+                        <li><strong>Implement approval workflows:</strong> For expenses and vendor payments</li>
+                        <li><strong>Utilize reporting:</strong> Schedule regular financial reports</li>
+                        <li><strong>Stay updated:</strong> Cloud software updates automatically, but stay informed about new features</li>
+                    </ul>
+                    
+                    <h3>Conclusion</h3>
+                    <p>Transitioning to cloud-based accounting is a strategic move that can transform your financial management. While the migration process requires careful planning, the long-term benefits of real-time financial insights, reduced paperwork, and improved efficiency make it a worthwhile investment. If you're unsure about the process, consider working with an accounting professional who specializes in cloud migration to ensure a smooth transition.</p>
+                `
+            },
+            // Additional blog posts would follow the same structure
+        ];
+
+        // Additional blog posts for the blog page
+        const allBlogPosts = [
+            ...blogPosts,
+            {
+                id: 4,
+                title: "Understanding Financial Statements: A Business Owner's Guide",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600",
+                excerpt: "Learn to interpret balance sheets, income statements, and cash flow statements to make better business decisions."
+            },
+            {
+                id: 5,
+                title: "Effective Cash Flow Management Strategies",
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600",
+                excerpt: "Discover practical techniques to improve your business's cash flow and avoid financial pitfalls."
+            },
+            {
+                id: 6,
+                title: "Payroll Best Practices for Small Businesses",
+                image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600",
+                excerpt: "Ensure compliance and efficiency with these essential payroll management strategies."
+            },
+            {
+                id: 7,
+                title: "How to Choose the Right Accounting Software",
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600",
+                excerpt: "A comprehensive guide to selecting the perfect accounting solution for your business needs."
+            },
+            {
+                id: 8,
+                title: "Year-End Tax Planning Strategies",
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600",
+                excerpt: "Maximize deductions and minimize liabilities with these year-end tax planning techniques."
+            },
+            {
+                id: 9,
+                title: "The Benefits of Outsourcing Your Bookkeeping",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600",
+                excerpt: "Discover how outsourcing bookkeeping can save time, reduce costs, and improve financial accuracy."
+            },
+            {
+                id: 10,
+                title: "Budgeting Techniques for Business Growth",
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600",
+                excerpt: "Effective budgeting methods to help your business scale sustainably."
+            }
+        ];
+
+        // DOM Elements
+        const blogModal = document.getElementById('blog-modal');
+        const blogContent = document.getElementById('blog-content');
+        const closeModal = document.querySelector('.close-modal');
+        const readMoreButtons = document.querySelectorAll('.read-more');
+        const viewAllBlogs = document.getElementById('view-all-blogs');
+        const blogPage = document.getElementById('blog-page');
+        const backToHome = document.getElementById('back-to-home');
+        const mainContent = document.querySelector('main');
+        const privacyLink = document.getElementById('privacy-link');
+        const tosLink = document.getElementById('tos-link');
+        const privacyPage = document.getElementById('privacy-page');
+        const tosPage = document.getElementById('tos-page');
+        const allBackButtons = document.querySelectorAll('.back-btn');
+        const cookieConsent = document.querySelector('.cookie-consent');
+        const acceptCookies = document.getElementById('acceptCookies');
+
+        // Open blog modal
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const blogId = parseInt(button.getAttribute('data-blog'));
+                const blog = blogPosts.find(post => post.id === blogId);
+                
+                if (blog) {
+                    blogContent.innerHTML = `
+                        <h2>${blog.title}</h2>
+                        <img src="${blog.image}" alt="${blog.title}" class="img-fluid">
+                        <div class="mt-4">${blog.content}</div>
+                    `;
+                    blogModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                }
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            blogModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+
+        // Close modal when clicking outside content
+        window.addEventListener('click', (e) => {
+            if (e.target === blogModal) {
+                blogModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        });
+
+        // View all blogs
+        viewAllBlogs.addEventListener('click', () => {
+            document.querySelector('main').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            blogPage.style.display = 'block';
+            
+            // Populate blog list
+            const blogList = document.querySelector('.blog-list .row');
+            blogList.innerHTML = '';
+            
+            allBlogPosts.forEach(post => {
+                const blogCard = document.createElement('div');
+                blogCard.className = 'col-md-6';
+                blogCard.innerHTML = `
+                    <div class="blog-card p-4">
+                        <img src="${post.image}" alt="${post.title}" class="img-fluid rounded">
+                        <div class="mt-3">
+                            <h4>${post.title}</h4>
+                            <p>${post.excerpt || post.content.substring(0, 150) + '...'}</p>
+                            <button class="btn btn-link read-more" data-blog="${post.id}">Read More</button>
+                        </div>
+                    </div>
+                `;
+                blogList.appendChild(blogCard);
+            });
+            
+            // Add event listeners to new Read More buttons
+            document.querySelectorAll('.blog-card .read-more').forEach(button => {
+                button.addEventListener('click', function() {
+                    const blogId = parseInt(this.getAttribute('data-blog'));
+                    const blog = allBlogPosts.find(post => post.id === blogId);
+                    
+                    if (blog) {
+                        blogContent.innerHTML = `
+                            <h2>${blog.title}</h2>
+                            <img src="${blog.image}" alt="${blog.title}" class="img-fluid">
+                            <div class="mt-4">${blog.content || '<p>Full content would appear here...</p>'}</div>
+                        `;
+                        blogModal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+        });
+
+        // Back to home from blog page
+        backToHome.addEventListener('click', () => {
+            blogPage.style.display = 'none';
+            document.querySelector('main').style.display = 'block';
+            document.querySelector('footer').style.display = 'block';
+        });
+
+        // Privacy Policy
+        privacyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('main').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            privacyPage.style.display = 'block';
+        });
+
+        // Terms of Service
+        tosLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('main').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            tosPage.style.display = 'block';
+        });
+
+        // Back buttons for all pages
+        allBackButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelector('main').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+                blogPage.style.display = 'none';
+                privacyPage.style.display = 'none';
+                tosPage.style.display = 'none';
+            });
+        });
+
+        // Cookie Consent
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookieConsent.style.display = 'block';
+                }, 2000);
+            }
+            
+            acceptCookies.addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieConsent.style.display = 'none';
+            });
+        });
+
+        // Scroll Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
